@@ -5,17 +5,14 @@
   'Standard_GRS'
   'Standard_GZRS'
   'Standard_LRS'
-  'Standard_RAGRS'
-  'Standard_RAGZRS'
-  'Standard_ZRS'
 ])
-param storageAccountType string = 'Standard_LRS'
+param storageAccountType string = 'Premium_ZRS'
 
 @description('The storage account location.')
 param location string = resourceGroup().location
 
 @description('The name of the storage account')
-param storageAccountName string = 'store${uniqueString(resourceGroup().id)}'
+param storageAccountName string = 'nameone'
 
 resource sa 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: storageAccountName
